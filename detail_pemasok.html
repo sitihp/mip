@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+<META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SIPT PT.YSU</title>
+	<link rel="stylesheet"  href="css/themes/default/jquery.mobile-1.3.1.min.css">
+	<link rel="stylesheet" href="demo/css/jqm-demos.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <script src="js/jquery.js"></script>
+	<script src="demo/js/jquery.mobile.demos.js"></script>
+    <script src="js/jquery.mobile-1.3.1.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="javascript/detail_pemasok.js"></script>
+</head>
+<body>
+
+<div id="detail_pemasok_page" data-role="page" class="jqm-demos">
+
+    <div data-role="header" data-position="fixed">
+        <a href="datapemasok.html" data-ajax="false" data-icon="arrow-l" data-theme="b" data-transition="slide">Back</a>
+        <h1>Detail Pemasok</h1>
+    </div>
+
+    
+    
+    <div data-role="content">
+    		
+            <div id="loading_panel" style="display:none;text-align:center;">
+            	<b>Please Waiting...!</b>
+                <br><br>
+            	<div class="progress progress-striped active">
+            		<div class="bar" style="width: 100%;"></div>
+        		</div>
+            </div>
+            
+            <div id="not_found" style="display:none;text-align:center;color:#F00;">
+            	<div class="alert alert-danger">
+                	<strong>Data not found...! Please try again</strong>
+            	</div>
+                <br><br><br>
+                <a href="index.html" data-role="button" data-inline="true" data-icon="check" data-theme="b" data-ajax="false">Back</a>
+            </div>
+            
+            
+            
+            <div id="conn_failed" style="display:none;text-align:center;color:#F00;">
+            	<div class="alert alert-danger">
+                	<strong>Connection Failed...! Please try again</strong>
+            	</div>
+                <br><br><br>
+                <a href="index.html" data-role="button" data-inline="true" data-icon="check" data-theme="b" data-ajax="false">Back</a>
+            </div>
+              
+       		
+            
+            <div id="allData" style="display:none;">
+                <p style="font-weight:bold;">Nama Perusahaan : </p>
+                <div id="nama_perusahaan" class="alert alert-info"></div>
+                <p style="font-weight:bold;">Alamat : </p>
+                <div id="alamat" class="alert alert-info"></div>
+                <p style="font-weight:bold;">Telepon : </p>
+                <div id="telp" class="alert alert-info"></div>
+                <p style="font-weight:bold;">Kodepos : </p>
+                <div id="kodepos" class="alert alert-info"></div>
+                <p style="font-weight:bold;">Nama Direksi : </p>
+                <div id="nama_direksi" class="alert alert-info"></div>
+                <p style="font-weight:bold;">Nilai Saham : </p>
+                <div id="nilai_saham" class="alert alert-info"></div>
+                <p style="font-weight:bold;">Nama Stakeholder : </p>
+                <div id="nama_stakeholder" class="alert alert-info"></div>
+                <p style="font-weight:bold;">Pekerjaan Stakeholder : </p>
+                <div id="pekerjaan_stakeholder" class="alert alert-info"></div>
+                <p style="font-weight:bold;">Kewarganegaraan Stakeholder : </p>
+                <div id="kewarganegaraan_stakeholder" class="alert alert-info"></div>
+                <p style="font-weight:bold;">Alamat Stakeholder : </p>
+                <div id="alamat_stakeholder" class="alert alert-info"></div>
+                <p style="font-weight:bold;">Komoditas : </p>
+                <div id="komoditas" class="alert alert-info"></div>
+                <p style="font-weight:bold;">Lokasi : </p>
+                <div id="lokasi" class="alert alert-info"></div>
+                <p style="font-weight:bold;">Desa : </p>
+                <div id="desa" class="alert alert-info"></div>
+                <p style="font-weight:bold;">Kecamatan : </p>
+                <div id="kecamatan" class="alert alert-info"></div>
+                <p style="font-weight:bold;">Kabupaten / Kota : </p>
+            	<div id="kabkota" class="alert alert-info"></div>
+                <p style="font-weight:bold;">Provinsi : </p>
+                <div id="prov" class="alert alert-info"></div>
+                <p style="font-weight:bold;">Luas (Ha) : </p>
+                <div id="luas" class="alert alert-info"></div>
+                <p style="font-weight:bold;">Jangka Waktu Penyelidikan : </p>
+            	<div id="jangka_wkt_p" class="alert alert-info"></div>
+                <p style="font-weight:bold;">Jangka Waktu Ekspedisi : </p>
+                <div id="jangka_wkt_eks" class="alert alert-info"></div>
+                <p style="font-weight:bold;">Jangka Waktu Studi : </p>
+                <div id="jangka_wkt_studi" class="alert alert-info"></div>
+                <p style="font-weight:bold;">Status Pemasok : </p>
+            	<div id="status_pemasok" class="alert alert-info"></div>
+                <p style="font-weight:bold;">Tanggal Pengesahan : </p>
+                <div id="tgl_pengesahan" class="alert alert-error" style="text-align:left;"></div>
+            </div>
+            
+
+    </div><!-- /content -->
+    
+    
+   <div data-role="panel" class="jqm-nav-panel jqm-navmenu-panel" data-position="left" data-display="reveal" data-theme="c">
+        <ul data-role="listview" data-theme="d" data-divider-theme="a" class="jqm-list">
+            <li data-role="list-divider">Menu</li>
+             <li><a href=".html" data-ajax="false" data-rel="page" data-transition="slide" data-inline="true"><img src="css/menu/search.png" class="ui-li-icon ui-corner-none">Login</a></li>
+            <li><a href=".html" data-ajax="false" data-rel="page" data-transition="slide" data-inline="true"><img src="css/menu/search.png" class="ui-li-icon ui-corner-none">Data Pemasok</a></li>
+			<li><a href="addpemasok.html" data-ajax="false" data-rel="page" data-transition="slide" data-inline="true"><img src="css/menu/search.png" class="ui-li-icon ui-corner-none">Tambah Data Pemasok</a></li>
+            <li><a href="promo.html" data-ajax="false" data-rel="page" data-transition="slide" data-inline="true"><img src="css/menu/promo.png" class="ui-li-icon ui-corner-none">Update Data Pemasok</a></li>
+           
+        </ul>
+	</div><!-- /panel -->
+    
+    
+
+</div><!-- /page -->
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+<META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SIPT PT.YSU</title>
+	<link rel="stylesheet"  href="css/themes/default/jquery.mobile-1.3.1.min.css">
+	<link rel="stylesheet" href="demo/css/jqm-demos.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <script type="text/javascript" charset="utf-8" src="cordova-2.6.0.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="demo/js/jquery.mobile.demos.js"></script>
+	<script src="js/jquery.mobile-1.3.1.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="javascript/addpemasok.js"></script>
+</head>
+<body style="background-color:#CCC;">
+<div data-role="page" class="jqm-demos">
+
+   <!-- <div data-role="header" class="jqm-header" data-position="fixed">
+		<h1 class="jqm-logo"><a href="#"><img src="demo/img/jquery-logo-2.png" alt="jQuery Mobile Framework"></a></h1>
+        <a href="#" class="jqm-navmenu-link" data-icon="bars" data-iconpos="notext">Navigation</a>
+	</div>-->
+    
+  <div data-role="header" data-position="fixed">
+	<a href="mainpage.html" data-icon="arrow-l" data-theme="b" data-transition="slide">Back</a>
+	<h1>Tambah Data Pemasok</h1>
+  </div>
+    
+    
+   <!-- rightpanel2  -->
+    
+    
+    <div data-role="content" class="jqm-content">
+    
+        	<div id="loading_panel" style="display:none;text-align:center;">
+            	<b>Please Waiting...!</b>
+                <br><br>
+            	<div class="progress progress-striped active">
+            		<div class="bar" style="width: 100%;"></div>
+        		</div>
+            </div>
+            
+            <div id="required" class="alert alert-danger" style="display:none;text-align:center;">
+                <strong>Your data is not complete</strong>
+             </div>
+             
+             <div id="sukses" class="alert alert-success" style="display:none;text-align:center;">
+                <strong>Your data has been sent</strong>
+             </div>
+            
+            <div id="conn_failed" style="display:none;text-align:center;">
+            	<div class="alert alert-success">
+                	<strong>Sukses Insert</strong>
+            	</div>
+                <br><br><br>
+                <a href="datapemasok.html" data-role="button" data-inline="true" data-icon="check" data-theme="b" data-ajax="false">Back</a>
+            </div>
+            
+            
+    		<div id="formpemasok">
+            	 <form style="margin-top:-8px;">
+                 <label for="no_iup">No. IUP :</label>
+                 <input name="no_iup" id="no_iup" value="" type="text" autocomplete="off">  
+                 <label for="nama_perusahaan">Nama Perusahaan :</label>
+                 <input name="nama_perusahaan" id="nama_perusahaan" value="" type="text" autocomplete="off">
+                 <label for="alamat">Alamat :</label>
+    			 <textarea cols="40" rows="8" name="alamat" id="alamat"></textarea>
+                 <label for="telp">Telepon :</label>
+                 <input type="number" pattern="[0-9]*"name="telp" id="telp" value="" autocomplete="off">
+                 <label for="kodepos">Kodepos :</label>
+                 <input name="kodepos" id="kodepos" value="" type="text" autocomplete="off">  
+                 <label for="nama_direksi">Nama Direksi :</label>
+                 <input name="nama_direksi" id="nama_direksi" value="" type="text" autocomplete="off">
+                 <label for="nilai_saham">Nilai Saham :</label>
+                 <input name="nilai_saham" id="nilai_saham" value="" type="text" autocomplete="off">
+                 <label for="nama_stakeholder">Nama Stakeholder :</label>
+                 <input name="nama_stakeholder" id="nama_stakeholder" value="" type="text" autocomplete="off">       
+                 <label for="pekerjaan_stakeholder">Pekerjaan Stakeholder :</label>
+                 <input name="pekerjaan_stakeholder" id="pekerjaan_stakeholder" value="" type="text" autocomplete="off">
+                 <label for="kewarganegaraan_stakeholder">Kewarganegaraan Stakeholder :</label>
+                 <input name="kewarganegaraan_stakeholder" id="kewarganegaraan_stakeholder" value="" type="text" autocomplete="off">     
+                 <label for="alamat_stakeholder">Alamat Stakeholder:</label>
+    			 <textarea cols="40" rows="8" name="alamat_stakeholder" id="alamat_stakeholder"></textarea>        
+                 <label for="komoditas">Komoditas :</label>
+                 <input name="komoditas" id="komoditas" value="" type="text" autocomplete="off">  
+                 <label for="lokasi">Lokasi :</label>
+                 <input name="lokasi" id="lokasi" value="" type="text" autocomplete="off">
+                 <label for="desa">Desa :</label>
+                 <input name="desa" id="desa" value="" type="text" autocomplete="off">
+                 <label for="kecamatan">Kecamatan :</label>
+                 <input name="kecamatan" id="kecamatan" value="" type="text" autocomplete="off">     
+                 <label for="kabkota">Kab / Kota :</label>
+                 <input name="kabkota" id="kabkota" value="" type="text" autocomplete="off">  
+                 <label for="prov">Provinsi :</label>
+                 <input name="prov" id="prov" value="" type="text" autocomplete="off">
+                 <label for="luas">Luas (Ha) :</label>
+                 <input name="luas" id="luas" value="" type="text" autocomplete="off">
+                 <label for="jangka_wkt_p">Jangka Waktu Penyelidikan :</label>
+                 <input name="jangka_wkt_p" id="jangka_wkt_p" value="" type="text" autocomplete="off">   
+                 <label for="jangka_wkt_eks">Jangka Waktu Ekspedisi :</label>
+                 <input name="jangka_wkt_eks" id="jangka_wkt_eks" value="" type="text" autocomplete="off">
+                 <label for="jangka_wkt_studi">Jangka Waktu Studi :</label>
+                 <input name="jangka_wkt_studi" id="jangka_wkt_studi" value="" type="text" autocomplete="off">   
+                 <label for="status_pemasok">Status Pemasok :</label>
+                 <input name="status_pemasok" id="status_pemasok" value="" type="text" autocomplete="off">
+                 <label for="tgl_pengesahan">Tanggal Pengesahan :</label>
+                 <input name="tgl_pengesahan" id="tgl_pengesahan" value="" type="text" autocomplete="off">       
+                 <p>
+                 	<a href="#" id="proses" data-role="button" data-inline="true" data-icon="check" data-theme="b" data-ajax="false">Submit</a>
+                </p>
+				</form>
+            </div>
+          
+            
+    </div><!-- /content -->
+    
+    <div id="loading" style="text-align:center;font-weight:bold;visibility:hidden;">Checking Data...!</div>
+    
+    
+    
+   <div data-role="panel" class="jqm-nav-panel jqm-navmenu-panel" data-position="left" data-display="reveal" data-theme="c">
+        <ul data-role="listview" data-theme="d" data-divider-theme="a" class="jqm-list">
+            <li data-role="list-divider">Menu</li>
+            <li><a href="datapemasok.html" data-ajax="false" data-rel="page" data-transition="slide" data-inline="true"><img src="css/menu/search.png" class="ui-li-icon ui-corner-none">Data Pemasok</a></li>
+			<li><a href="addpemasok.html" data-ajax="false" data-rel="page" data-transition="slide" data-inline="true"><img src="css/menu/search.png" class="ui-li-icon ui-corner-none">Tambah Data Pemasok</a></li>
+            <li><a href="index.html" data-ajax="false" data-rel="page" data-transition="slide" data-inline="true"><img src="css/menu/promo.png" class="ui-li-icon ui-corner-none">Logout</a></li>
+           
+        </ul>
+	</div><!-- /panel -->
+    
+    
+
+</div><!-- /page -->
+</body>
+</html>
